@@ -1,5 +1,38 @@
 ---
 layout: home
-title: My website
-subtitle: This is where I will tell my friends way too much about me
+title: Dapper
+subtitle: A Lightweight and Extensible Framework for Live Program State Rewriting
 ---
+<h3 id="overview">Overview</h3>
+<p>
+Dapper transforms a live process's state for different purposes. For example, Dapper supports
+live process migration of natively compiled Linux binaries across servers with CPUs of different architectures.
+It also support re-randomizing the stack and registers of a process to improve security.
+</p>
+<img src="./assets/img/overview.png" alt="Dinosaur" />
+<p>
+    Dapper was built on top of <a href="https://criu.org/Main_Page">CRIU</a> to dump
+    a running process and then transform the <a href="https://criu.org/Images">CRIU images</a> to support restoration on servers of a different architecture.
+    Currently, Dapper supports process migration on <code>x86-64</code> and <code>aarch64</code> CPUs.
+</p>
+
+<h3 id="getting-started">Getting Started</h3>
+<p>
+    Please refer to the <a href="https://github.com/dapper-project/dapper/wiki">wiki page</a> for a tutorial on how to rewrite process images with Dapper.
+</p>
+
+<h3 id="publication">Publication</h3>
+<ul>
+    <li><strong>Dapper: A Lightweight and Extensible Framework for Live Program State Rewriting.</strong>
+        <br/>A. Bapat, J. Shastri, X. Wang, A. Sundarasamy, and B. Ravindran<br/>to appear in <a href="https://icdcs2024.icdcs.org/"><strong>IEEE ICDCS'24</strong></a>
+        [<a href="https://www.ssrg.ece.vt.edu/papers/icdcs24.pdf">Paper</a>]
+        [<a href="https://github.com/dapper-project/dapper">Code</a>]
+    </li>
+</ul>
+<!--
+For more information, please refer to the <a href=""> </a>.
+
+Dapper uses LLVM's stack maps to generate stack and register metadata and implements a stack and register transformation logic leveraging the generated metadata. It does this on CRIU dumped images and hence does not involve injecting transformation runtime within the binary image improving security.
+<p>
+This repository provides the CRIU wrapper and the compiler toolchain can be found on this branch of the popcorn compiler repository.
+-->
