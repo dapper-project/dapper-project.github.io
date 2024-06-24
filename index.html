@@ -7,14 +7,21 @@ subtitle: A Lightweight and Extensible Framework for Live Program State Rewritin
 <p>
 Dapper transforms a live process's state for different purposes. For example, Dapper supports
 live process migration of natively compiled Linux binaries across servers with CPUs of different architectures.
-It also support re-randomizing the stack and registers of a process to improve security.
+It also supports re-randomizing the stack and registers of a process to improve security.
 </p>
 <img src="./assets/img/overview.png" alt="Dinosaur" />
 <p>
     Dapper was built on top of <a href="https://criu.org/Main_Page">CRIU</a> to dump
-    a running process and then transform the <a href="https://criu.org/Images">CRIU images</a> to support restoration on servers of a different architecture.
-    Currently, Dapper supports process migration on <code>x86-64</code> and <code>aarch64</code> CPUs.
+    a running process and then transform the <a href="https://criu.org/Images">CRIU images</a> to support restoration
+    on servers of a different architecture (see the <a href="#demo">demo</a> below).
+    Currently, Dapper supports live process migration on <code>x86-64</code> and <code>aarch64</code> CPUs.
 </p>
+
+<h4 id="demo">Demo</h4>
+<figure>
+    <img src='./assets/img/dapper-demo.gif' alt='Dinosaur' />
+    <figcaption>A demo of Dapper's process rewriting capability for cross-architecture live process migration. More details can be found <a href="https://github.com/dapper-project/demo">here</a>.</figcaption>
+</figure>
 
 <h3 id="getting-started">Getting Started</h3>
 <p>
